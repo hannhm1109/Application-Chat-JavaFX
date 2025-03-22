@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chatapp.client.ClientController">
+    <top>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="titre" text="Client de Chat" />
+                <HBox spacing="10.0">
+                    <children>
+                        <Label text="Nom:" />
+                        <TextField fx:id="txtNom" prefWidth="150.0" promptText="Votre nom" HBox.hgrow="ALWAYS" />
+                        <Label text="Serveur:" />
+                        <TextField fx:id="txtServeur" prefWidth="120.0" promptText="localhost" />
+                        <Label text="Port:" />
+                        <TextField fx:id="txtPort" prefWidth="60.0" promptText="9000" />
+                        <Button fx:id="btnConnecter" mnemonicParsing="false" onAction="#handleConnecter" text="Connecter" />
+                        <Button fx:id="btnDeconnecter" mnemonicParsing="false" onAction="#handleDeconnecter" text="Déconnecter" />
+                    </children>
+                </HBox>
+                <HBox spacing="5.0">
+                    <children>
+                        <Label text="Statut:" />
+                        <Label fx:id="lblStatut" text="Déconnecté" textFill="RED" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.75" BorderPane.alignment="CENTER">
+            <items>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Messages:">
+                            <VBox.margin>
+                                <Insets left="5.0" />
+                            </VBox.margin>
+                        </Label>
+                        <ListView fx:id="lstMessages" VBox.vgrow="ALWAYS" />
+                        <TextArea fx:id="txtMessage" prefHeight="60.0" promptText="Écrivez votre message ici...">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </TextArea>
+                        <Button fx:id="btnEnvoyer" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleEnvoyer" text="Envoyer">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox spacing="5.0">
+                    <padding>
+                        <Insets bottom="10.0" left="5.0" right="10.0" top="5.0"/>
+                    </padding>
+                    <Label text="Utilisateurs en ligne:">
+                        <VBox.margin>
+                            <Insets left="5.0"/>
+                        </VBox.margin>
+                    </Label>
+                    <ListView fx:id="lstUtilisateurs" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

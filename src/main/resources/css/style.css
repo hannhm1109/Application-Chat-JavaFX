@@ -1,0 +1,74 @@
+/* Styles généraux */
+.root {
+    -fx-font-family: 'Arial';
+    -fx-background-color: #f5f5f5;
+}
+
+/* Style du titre */
+.titre {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 5 0 5 0;
+}
+
+/* Style des boutons */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 3px;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #1c6ea4;
+}
+
+/* Style des champs de texte */
+.text-field, .text-area {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 3px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #3498db;
+}
+
+/* Style des listes */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 3px;
+}
+
+.list-cell {
+    -fx-padding: 5px;
+    -fx-background-color: transparent;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Style du SplitPane */
+.split-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: #ccc;
+    -fx-padding: 0 1px 0 1px;
+}
+
+/* Style des labels */
+.label {
+    -fx-text-fill: #2c3e50;
+}
